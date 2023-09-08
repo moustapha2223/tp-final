@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: monapp-v3
+spec:
+  selector:
+    matchLabels:
+      app: monapp-v3
+  template:
+    metadata:
+      labels:
+        app: monapp-v3
+    spec:
+      containers:
+      - name: monapp-v3
+        image: abdelaa7/projetaa7  
+        resources:
+          limits:
+            memory: "512Mi"
+            cpu: "1000m"
+        ports:
+        - containerPort: 5000
